@@ -13,7 +13,7 @@ module.exports = function (params, callback) {
         headingSelectors;
 
     // Defaults: plugin parameters override data attributes, which override our defaults
-    thisOptions = {content: ".js-content", headings: "h1,h2,h3,h4"};
+    thisOptions = {content: ".js-content", headings: "h1,h2,h3"};
     headingSelectors = thisOptions.headings.split(",");
 
     // Set up some automatic IDs if we do not already have them
