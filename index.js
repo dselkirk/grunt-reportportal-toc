@@ -24,7 +24,6 @@ module.exports = function (params, callback) {
             $(this).text().replace(/^[^A-Za-z]*/, "").replace(/[^A-Za-z0-9]+/g, "_");
     }).each(function (i, elem) {
 
-        if ($(this).hasClass('not-toc')) continue;
         // What level is the current heading?
         var elem = $(this),
             level = $(headingSelectors).map(function (index, selector) {
@@ -48,10 +47,12 @@ module.exports = function (params, callback) {
             // stack.splice(0, Math.min(currentLevel - level, Math.max(stack.length - 1, 0)));
         }
 
-        // Add the list item
-        stack[0].append($("<li class='toc-level toc-level-"+level+"'/>").append(
-            $("<a/>").text(elem.text()).attr("href", "#" + elem.attr("id"))
-        ));
+        if (!elem.hasClass('not-toc')) {
+            // Add the list item
+            stack[0].append($("<li class='toc-level toc-level-"+level+"'/>").append(
+                $("<a/>").text(elem.text()).attr("href", "#" + elem.attr("id"))
+            ));
+        };
 
         currentLevel = level;
         params.content = $.html();
