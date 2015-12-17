@@ -23,6 +23,8 @@ module.exports = function (params, callback) {
         return attr ||
             $(this).text().replace(/^[^A-Za-z]*/, "").replace(/[^A-Za-z0-9]+/g, "_");
     }).each(function (i, elem) {
+
+        if ($(this).hasClass('not-toc')) continue;
         // What level is the current heading?
         var elem = $(this),
             level = $(headingSelectors).map(function (index, selector) {

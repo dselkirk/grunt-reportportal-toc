@@ -1,7 +1,7 @@
 {
   "name": "grunt-reportportal-toc",
   "description": "Plugin for adding a Table of Contents (TOC) to Report Portal Documentation.",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "homepage": "https://github.com/dselkirk/grunt-reportportal-toc",
   "author": "Dennis Selkirk",
   "repository": {
