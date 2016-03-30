@@ -50,7 +50,7 @@ module.exports = function (params, callback) {
         if (!elem.hasClass('not-toc')) {
             // Add the list item
             stack[0].append($("<li class='toc-level toc-level-"+level+"'/>").append(
-                $("<a/>").text(elem.text()).attr("href", "#" + elem.attr("id"))
+                $("<a/>").text(elem.text()).attr("href", "#documentation/" + elem.attr("id"))
             ));
         };
 
